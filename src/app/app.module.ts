@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,8 @@ import { CommonModule } from '@angular/common';
     UserListComponent
   ],
   providers: [
+  
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

@@ -7,7 +7,7 @@ import { User } from '../models/user.model';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'https://citoykaidi.onrender.com/api/users'; // URL de ton backend
+  private apiUrl = 'https://citoykaidi-backend.onrender.com/api/users'; // URL de ton backend
 
   constructor(private http: HttpClient) {}
 
