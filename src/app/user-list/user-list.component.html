@@ -1,17 +1,26 @@
 <h2>Liste des Utilisateurs</h2>
-<table border="1">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nom</th>
-      <th>Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users">
-      <td>{{ user.id }}</td>
-      <td>{{ user.name }}</td>
-      <td>{{ user.email }}</td>
-    </tr>
-  </tbody>
-</table>
+<mat-table [dataSource]="users" class="mat-elevation-z8">
+
+  <!-- Colonne ID -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{ user.id }} </mat-cell>
+  </ng-container>
+
+  <!-- Colonne Nom -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Nom </mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{ user.name }} </mat-cell>
+  </ng-container>
+
+  <!-- Colonne Email -->
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{ user.email }} </mat-cell>
+  </ng-container>
+
+  <!-- Ligne d'en-tête -->
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <!-- Lignes de données -->
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
